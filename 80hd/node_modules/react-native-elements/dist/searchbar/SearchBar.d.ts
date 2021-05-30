@@ -1,0 +1,71 @@
+import React from 'react';
+import IOSSearchBar, { SearchBarIosProps } from './SearchBar-ios';
+import { SearchBarAndroidProps } from './SearchBar-android';
+import { SearchBarDefaultProps } from './SearchBar-default';
+import { ActivityIndicatorProps, StyleProp, TextStyle, ViewStyle, TextInput } from 'react-native';
+import { IconNode } from '../icons/Icon';
+import { ThemeProps } from '../config';
+export declare type SearchBarBaseProps = React.ComponentPropsWithRef<typeof TextInput> & {
+    platform: 'default' | 'ios' | 'android';
+    containerStyle?: StyleProp<ViewStyle>;
+    inputContainerStyle?: StyleProp<ViewStyle>;
+    clearIcon?: IconNode;
+    searchIcon?: IconNode;
+    inputStyle?: StyleProp<TextStyle>;
+    loadingProps?: ActivityIndicatorProps;
+    showLoading?: boolean;
+    leftIconContainerStyle?: StyleProp<ViewStyle>;
+    rightIconContainerStyle?: StyleProp<ViewStyle>;
+    onClear?(): void;
+    onFocus?(): void;
+    onBlur?(): void;
+    onChangeText?(text: string): void;
+    onCancel?(): void;
+};
+export declare type SearchBarProps = SearchBarBaseProps & SearchBarDefaultProps & SearchBarAndroidProps & SearchBarIosProps;
+declare class SearchBar extends React.Component<SearchBarBaseProps & Partial<ThemeProps<SearchBarBaseProps>>> {
+    searchbar: IOSSearchBar;
+    static defaultProps: {
+        platform: "default";
+    };
+    focus: () => void;
+    blur: () => void;
+    clear: () => void;
+    cancel: () => void;
+    render(): JSX.Element;
+}
+export { SearchBar };
+declare const _default: React.FunctionComponent<Omit<import("react-native").TextInputProps & React.RefAttributes<TextInput> & {
+    platform: "ios" | "android" | "default";
+    containerStyle?: StyleProp<ViewStyle>;
+    inputContainerStyle?: StyleProp<ViewStyle>;
+    clearIcon?: IconNode;
+    searchIcon?: IconNode;
+    inputStyle?: StyleProp<TextStyle>;
+    loadingProps?: ActivityIndicatorProps;
+    showLoading?: boolean;
+    leftIconContainerStyle?: StyleProp<ViewStyle>;
+    rightIconContainerStyle?: StyleProp<ViewStyle>;
+    onClear?(): void;
+    onFocus?(): void;
+    onBlur?(): void;
+    onChangeText?(text: string): void;
+    onCancel?(): void;
+} & Partial<ThemeProps<SearchBarBaseProps>>, keyof ThemeProps<T>>> | React.ForwardRefExoticComponent<import("react-native").TextInputProps & React.RefAttributes<TextInput> & {
+    platform: "ios" | "android" | "default";
+    containerStyle?: StyleProp<ViewStyle>;
+    inputContainerStyle?: StyleProp<ViewStyle>;
+    clearIcon?: IconNode;
+    searchIcon?: IconNode;
+    inputStyle?: StyleProp<TextStyle>;
+    loadingProps?: ActivityIndicatorProps;
+    showLoading?: boolean;
+    leftIconContainerStyle?: StyleProp<ViewStyle>;
+    rightIconContainerStyle?: StyleProp<ViewStyle>;
+    onClear?(): void;
+    onFocus?(): void;
+    onBlur?(): void;
+    onChangeText?(text: string): void;
+    onCancel?(): void;
+} & Partial<ThemeProps<SearchBarBaseProps>>>;
+export default _default;

@@ -1,0 +1,12 @@
+{
+  "name": "80hd",
+  "displayName": "80hd",
+  "expo": {
+    "name": "80hd",
+    "slug": "80hd",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
