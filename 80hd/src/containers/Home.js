@@ -4,9 +4,11 @@ import Calendar from '../modules/calendar/Calendar'
 import Mood from '../components/Mood'
 import Theme from '../styles/colors'
 import LoggerView from '../components/LoggerView'
-import UserContext from '../utilities/User';
+import UserContext from '../utilities/User'
+import Axios from 'axios'
 
 const today = new Date().toDateString();
+const moodInit = 10;
 
 const user = {
     name: 'Naomi'
@@ -14,16 +16,25 @@ const user = {
 
 function Home () {
     // Use state variables to store date and mood
-    const [mood, setMood] = React.useState(null);
+    const [mood, setMood] = React.useState(moodInit);
     const [date, setDate] = React.useState(today);
 
     function logMood(mood) {
         setMood(mood)
-        console.log(`Mood: ${mood} Date: ${date.formattedDate}`)
+        console.log(`Mood: ${mood} Date: ${date}`)
+        Axios.post('http://localhost:4000/api/insert', { 
+            userid: user,
+            date: date, 
+            mood: mood
+        }).then(() => {
+            console.log("mood inserted successfully")
+        }).catch(error => console.log(error));
+
     }
     
-    function logDate(date) {
-        setDate(date)
+    function logDate(obj) {
+        console.log(obj.date)
+        setDate(obj.date)
     }
 
     return (
