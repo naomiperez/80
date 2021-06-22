@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from '../LoginScreen/styles';
-import Firebase, { db } from '../../firebase/config'
+import firebase from "firebase/app"
 
-export default function RegistrationScreen({navigation}) {
+export default function Registration({navigation}) {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -26,7 +26,7 @@ export default function RegistrationScreen({navigation}) {
 
         // store the user data in Firebase Firestore
         // (necessary for storing extra user information, such as full name, profile photo URL, and so on, which cannot be stored in the Authentication table)
-        Firebase.auth()
+        firebase.auth()
             .createUserWithEmailAndPassword(email, password)
             .then((response) => {
                 const uid = response.user.uid
@@ -35,6 +35,7 @@ export default function RegistrationScreen({navigation}) {
                     email,
                     fullName,
                 };
+                const db = firebase.firestore()
                 const usersRef = db.collection('users')
                 usersRef
                     .doc(uid)

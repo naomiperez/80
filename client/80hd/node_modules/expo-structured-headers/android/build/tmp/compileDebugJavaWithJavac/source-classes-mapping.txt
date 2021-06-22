@@ -1,0 +1,40 @@
+expo/modules/structuredheaders/Parser.java
+ expo.modules.structuredheaders.Parser
+expo/modules/structuredheaders/DecimalItem.java
+ expo.modules.structuredheaders.DecimalItem
+expo/modules/structuredheaders/ParseException.java
+ expo.modules.structuredheaders.ParseException
+expo/modules/structuredheaders/ByteSequenceItem.java
+ expo.modules.structuredheaders.ByteSequenceItem
+expo/modules/structuredheaders/Dictionary.java
+ expo.modules.structuredheaders.Dictionary
+expo/modules/structuredheaders/Type.java
+ expo.modules.structuredheaders.Type
+expo/modules/structuredheaders/InnerList.java
+ expo.modules.structuredheaders.InnerList
+expo/modules/structuredheaders/BuildConfig.java
+ expo.modules.structuredheaders.BuildConfig
+expo/modules/structuredheaders/Parameters.java
+ expo.modules.structuredheaders.Parameters
+expo/modules/structuredheaders/LongSupplier.java
+ expo.modules.structuredheaders.LongSupplier
+expo/modules/structuredheaders/Utils.java
+ expo.modules.structuredheaders.Utils
+expo/modules/structuredheaders/OuterList.java
+ expo.modules.structuredheaders.OuterList
+expo/modules/structuredheaders/NumberItem.java
+ expo.modules.structuredheaders.NumberItem
+expo/modules/structuredheaders/StringItem.java
+ expo.modules.structuredheaders.StringItem
+expo/modules/structuredheaders/Item.java
+ expo.modules.structuredheaders.Item
+expo/modules/structuredheaders/IntegerItem.java
+ expo.modules.structuredheaders.IntegerItem
+expo/modules/structuredheaders/TokenItem.java
+ expo.modules.structuredheaders.TokenItem
+expo/modules/structuredheaders/ListElement.java
+ expo.modules.structuredheaders.ListElement
+expo/modules/structuredheaders/Parametrizable.java
+ expo.modules.structuredheaders.Parametrizable
+expo/modules/structuredheaders/BooleanItem.java
+ expo.modules.structuredheaders.BooleanItem
