@@ -11,10 +11,9 @@ function Calendar(props) {
   // handleChange used for CalendarStrip's onDateSelected callback
   function handleChange(date) {
     const dateObj = new Date(date)
-    const formattedDate = dateObj.getFullYear().toString()+'-'+dateObj.getMonth().toString()+'-'+dateObj.getDate().toString()
-    console.log(formattedDate)
+
     // Calling 'Home' logDate function
-    props.logDate({ date: formattedDate })
+    props.logDate({ date: dateObj })
   }
 
   return (

@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from '../LoginScreen/styles';
-import firebase from "firebase/app"
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import 'firebase/auth'
+import { firebaseConfig } from '../../firebase/config'
+import { CurrentUserProvider, useCurrentUser } from '../../CurrentUserContext'
 
 export default function Registration({navigation}) {
     const [fullName, setFullName] = useState('')
@@ -32,9 +36,10 @@ export default function Registration({navigation}) {
                 const uid = response.user.uid
                 const data = {
                     id: uid,
-                    email,
-                    fullName,
+                    email: email,
+                    fullName: fullName,
                 };
+                
                 const db = firebase.firestore()
                 const usersRef = db.collection('users')
                 usersRef

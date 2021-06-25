@@ -43,5 +43,5 @@ var firebaseConfig = {
 //   name: 'SECONDARY_APP',
 // };
 
-firebase.initializeApp(firebaseConfig)
 export default firebaseConfig;
+firebase.initializeApp(firebaseConfig)

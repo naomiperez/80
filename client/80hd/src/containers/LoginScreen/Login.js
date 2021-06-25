@@ -3,11 +3,16 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-import firebase from "firebase/app"
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import 'firebase/auth'
+import { firebaseConfig } from '../../firebase/config'
+import { CurrentUserProvider, useCurrentUser } from '../../CurrentUserContext'
 
 export default function Login({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const { currentUser, fetchCurrentUser } = useCurrentUser()
 
     const onFooterLinkPress = () => {
         navigation.navigate('Registration')
@@ -18,7 +23,8 @@ export default function Login({navigation}) {
         .signInWithEmailAndPassword(email, password)
         .then((response) => {
             const uid = response.user.uid
-            const usersRef = firebase.collection('users')
+            const usersRef = firebase.firestore().collection('users')
+            console.log(usersRef)
             usersRef
                 .doc(uid)
                 .get()
@@ -28,7 +34,7 @@ export default function Login({navigation}) {
                         return;
                     }
                     const user = firestoreDocument.data()
-                    navigation.navigate('Home', {user})
+                    navigation.navigate('Home')
                 })
                 .catch(error => {
                     alert(error)
@@ -39,6 +45,7 @@ export default function Login({navigation}) {
         })
     }
 
+    /* TODO: Put styling in a separate file */
     return (
         <View style={styles.container}>
             <KeyboardAwareScrollView
