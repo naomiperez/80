@@ -15,6 +15,10 @@ export default StyleSheet.create({
         alignSelf: "center",
         margin: 30
     },
+    scroll: {
+        flex: 1,
+        width: '100%'
+    },
     input: {
         height: 48,
         borderRadius: 5,

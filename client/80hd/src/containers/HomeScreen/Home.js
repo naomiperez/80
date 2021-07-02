@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import Calendar from '../../modules/calendar/Calendar'
-import Mood from '../MoodSelector/Mood'
-import LoggerView from '../../components/LoggerView'
+import Calendar from '../../components/calendar/Calendar'
+import LoggerView from '../../components/LoggerCard/LoggerView'
+import MoodSelector from '../MoodSelector/Mood'
+import SleepSelector from '../SleepSelector/Sleep'
 import firebase from "firebase/app"
 import 'firebase/firestore'
 import 'firebase/auth'
@@ -16,6 +17,7 @@ function Home(props) {
     // Use state variables to store date and mood
     const [mood, setMood] = useState(moodInit)
     const [date, setDate] = useState(today)
+    const [sleepHours, setSleepHours] = useState(0)
     const { currentUser, fetchCurrentUser } = useCurrentUser()
 
     const userRef = currentUser
@@ -113,8 +115,13 @@ function Home(props) {
     }
 
     function logDate(obj) {
-        console.log(obj.date)
+        // console.log(obj.date)
         setDate(obj.date)
+    }
+
+    function logSleep(obj) {
+        setSleepHours(obj)
+        console.log("Sleep hours in Home component: " + obj)
     }
 
     return (
@@ -122,7 +129,8 @@ function Home(props) {
             <View style={styles.container}>
                 {/* import the context and pass along the data */}
                 <Calendar date={date} logDate={logDate} />
-                <LoggerView selector={<Mood mood={mood} logMood={logMood} />} />
+                <LoggerView selector={<MoodSelector mood={mood} logMood={logMood} />} cardTitle='mood' expandHeight={60}/>
+                <LoggerView selector={<SleepSelector hours={sleepHours} logSleep={logSleep} />} cardTitle='sleep' expandHeight={80} />
             </View>
         </CurrentUserProvider>
     );

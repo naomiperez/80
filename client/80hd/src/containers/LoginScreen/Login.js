@@ -1,6 +1,6 @@
 // import { firebase } from '../../firebase/config'
 import React, { useState } from 'react'
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TextInput, TouchableOpacity, View, StyleSheet } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 import firebase from 'firebase/app'
@@ -49,7 +49,7 @@ export default function Login({navigation}) {
     return (
         <View style={styles.container}>
             <KeyboardAwareScrollView
-                style={{ flex: 1, width: '100%' }}
+                style={styles.scroll}
                 keyboardShouldPersistTaps="always">
                 <Image
                     style={styles.logo}

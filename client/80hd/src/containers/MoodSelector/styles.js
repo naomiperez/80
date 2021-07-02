@@ -15,10 +15,9 @@ export default StyleSheet.create({
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,
-        shadowOpacity: 0.2,
     },
     icon: {
-        width: 35,
-        height: 35
+        width: 25,
+        height: 25
     }
 });
