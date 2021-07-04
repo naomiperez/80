@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Text } from "react-native";
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { CurrentUserProvider } from './src/CurrentUserContext'
 import AppNavigator from './src/AppNavigator';
-import Home from './src/containers/HomeScreen/Home'
+import Home from './src/containers/HomeScreen/Home';
 
 const HomeNav = createStackNavigator();
 
@@ -14,11 +13,9 @@ function App() {
   return (
     <NavigationContainer>
       <CurrentUserProvider>
-        <HomeNav.Navigator screenOptions={{
-          headerShown: false
-        }}>
-          <HomeNav.Screen name="Home" component={Home} />
-          <HomeNav.Screen name="AppNavigator" component={AppNavigator} />
+        <HomeNav.Navigator screenOptions={{headerShown: false}}>
+          <HomeNav.Screen name='Home' component={Home} />
+          <HomeNav.Screen name='AppNavigator' component={AppNavigator} />
         </HomeNav.Navigator>
       </CurrentUserProvider>
     </NavigationContainer>
