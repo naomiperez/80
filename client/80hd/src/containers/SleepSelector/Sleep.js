@@ -3,6 +3,8 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 
+/* I may have to implement something where I retreive that day's Mood info to display when user clicks on it */
+
 function SleepSelector(props) {
   const [hours, setHours] = useState(props.hours);
 

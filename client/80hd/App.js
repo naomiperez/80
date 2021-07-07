@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { CurrentUserProvider } from './src/CurrentUserContext'
 import AppNavigator from './src/AppNavigator';
 import Home from './src/containers/HomeScreen/Home';
+import HomeNavigation from './src/HomeNavigation';
 
 const HomeNav = createStackNavigator();
 
@@ -14,7 +15,7 @@ function App() {
     <NavigationContainer>
       <CurrentUserProvider>
         <HomeNav.Navigator screenOptions={{headerShown: false}}>
-          <HomeNav.Screen name='Home' component={Home} />
+          <HomeNav.Screen name='HomeNavigation' component={HomeNavigation} />
           <HomeNav.Screen name='AppNavigator' component={AppNavigator} />
         </HomeNav.Navigator>
       </CurrentUserProvider>

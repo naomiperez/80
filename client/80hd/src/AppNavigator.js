@@ -1,18 +1,20 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import OnboardingSwiper from './components/OnboardingSwiper';
-import Home from './containers/HomeScreen/Home';
+import OnboardingSwiper from './utilities/OnboardingSwiper/OnboardingSwiper';
 import Login from './containers/LoginScreen/Login';
 import Registration from './containers/RegistrationScreen/Registration';
 import { CurrentUserProvider, useCurrentUser } from './CurrentUserContext';
+import HomeNavigation from './HomeNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
 // Use Stack Navigator to navigate to various pages in app
-function AppNavigator() {
-  const { currentUser, fetchCurrentUser } = useCurrentUser();
+function AppNavigator({navigation}) {
 
+  const { currentUser, fetchCurrentUser } = useCurrentUser();
+  
   React.useEffect(() => {
     async function fetchUser() {
       await fetchCurrentUser();
@@ -25,12 +27,12 @@ function AppNavigator() {
   } else {
     return (
       <CurrentUserProvider>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName='HomeNavigation'>
           {currentUser ? (
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name='HomeNavigation' component={HomeNavigation} />
           ) : (
             <>
-              <Stack.Screen name="Onboarding" component={OnboardingSwiper} />
+              <Stack.Screen name="OnboardingSwiper" component={OnboardingSwiper} />
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Registration" component={Registration} />
             </>

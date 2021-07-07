@@ -19,7 +19,10 @@ function Calendar(props) {
   return (
     <View>
       <CalendarStrip
-        scrollable
+        scrollerPaging
+        startingDate={date}
+        selectedDate={date}
+        scrollToOnSetSelectedDate
         style={{ height: 150, paddingTop: 15, paddingBottom: 5 }}
         daySelectionAnimation={{
           type: 'background',

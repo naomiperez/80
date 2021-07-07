@@ -3,15 +3,17 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { mood1, mood2, mood3, mood4, mood5, mood6, mood7 } from '../../assets/images';
 import styles from './styles';
 
+/* I may have to implement something where I retreive that day's Mood info to display when user clicks on it */
+
 // Mood Card displayed on Home page where user can log daily mood
 const images = new Array(mood1, mood2, mood3, mood4, mood5, mood6, mood7);
 
-function MoodSelector(props) {
+export function MoodSelectorFrag(props) {
   const [pressed, setPressed] = useState(props.mood);
-  let { mood } = props;
+  let { mood, date } = props;
 
   {
-    console.log('mood pressed ' + pressed);
+    console.log('Rerendering MoodFrag?');
   }
 
   function handleChange(index) {
@@ -42,4 +44,10 @@ function MoodSelector(props) {
   );
 }
 
+function moodPropsChanged(prevMood, nextMood){
+  console.log("Prev date: " + prevMood.date + " Next date: " + nextMood.date)
+  return prevMood.date == nextMood.date;
+}
+
+const MoodSelector = React.memo(MoodSelectorFrag, moodPropsChanged);
 export default MoodSelector;

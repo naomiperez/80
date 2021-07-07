@@ -65,7 +65,7 @@ class ExpandableCard extends React.Component {
   // and the Animated.View is the expanded View that has a dynamic height and displays the
   // Logger Selection options
   render() {
-    const { expanded, anime } = this.state;
+    const { expanded } = this.state;
     const { children, cardTitle } = this.props;
 
     return (
@@ -76,7 +76,7 @@ class ExpandableCard extends React.Component {
             <Image style={styles.img} source={dropdown} />
           </TouchableHighlight>
         </View>
-        <Animated.View style={[{ height: anime.height }]} onLayout={this.initContentHeight}>
+        <Animated.View style={[{ height: this.anime.height }]} onLayout={this.initContentHeight}>
           {expanded === true ? children : <></>}
         </Animated.View>
       </View>

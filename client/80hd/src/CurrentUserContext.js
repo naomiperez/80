@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import { firebaseConfig } from './firebase/config';
 
 export const CurrentUserContext = React.createContext();
 
@@ -24,7 +23,7 @@ export const CurrentUserProvider = ({ children }) => {
           .then((document) => {
             const userData = document.data();
             setCurrentUser(userData);
-            console.log('CurrentUserContext: ' + userData);
+            console.log('CurrentUserContext: ' + userData.fullName);
           })
           .catch((error) => {
             console.log('Error: ' + error);
