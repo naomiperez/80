@@ -1,0 +1,6 @@
+module Pods_80hd_80hdTests {
+  umbrella header "Pods-80hd-80hdTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
