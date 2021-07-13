@@ -8,7 +8,7 @@ class ExpandableCard extends React.Component {
     height: new Animated.Value(60),
     expanded: false,
     contentHeight: 0,
-  };
+  }
 
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class ExpandableCard extends React.Component {
     this.anime.expanded = props.expanded;
     this.state = {
       expanded: props.expanded,
-    };
+    }
 
     this.anime.height = new Animated.Value(props.expandHeight);
   }
@@ -44,7 +44,7 @@ class ExpandableCard extends React.Component {
       toValue: this.anime.expanded ? this.getMinValue() : this.getMaxValue(),
       duration: 90,
       useNativeDriver: false,
-    }).start();
+    }).start()
     this.anime.expanded = !this.anime.expanded;
 
     // Wait for container View to expand before rendering the Selection Options
@@ -52,12 +52,12 @@ class ExpandableCard extends React.Component {
       setTimeout(() => {
         this.setState((prevState) => ({
           expanded: !prevState.expanded,
-        }));
-      }, 90);
+        }))
+      }, 90)
     } else {
       this.setState((prevState) => ({
         expanded: !prevState.expanded,
-      }));
+      }))
     }
   }
 
@@ -84,7 +84,7 @@ class ExpandableCard extends React.Component {
           {expanded === true ? children : <View></View>}
         </Animated.View>
       </View>
-    );
+    )
   }
 }
 

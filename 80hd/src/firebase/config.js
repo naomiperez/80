@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 
 // const androidCredentials = {
 //   clientId: '23844228465-a31re82e4fkeuua5bks0f3imafqtf93c.apps.googleusercontent.com',
@@ -23,14 +23,14 @@ import 'firebase/firestore';
 // };
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyBRiwQ2HQMOF9TgsFMO7b41035wjNj4lNI',
-  authDomain: 'hd-e5880.firebaseapp.com',
-  projectId: 'hd-e5880',
-  storageBucket: 'hd-e5880.appspot.com',
-  messagingSenderId: '23844228465',
-  appId: '1:23844228465:web:d47372359f50686c237ad0',
-  measurementId: 'G-HRV974KXD2',
-};
+	apiKey: 'AIzaSyBRiwQ2HQMOF9TgsFMO7b41035wjNj4lNI',
+	authDomain: 'hd-e5880.firebaseapp.com',
+	projectId: 'hd-e5880',
+	storageBucket: 'hd-e5880.appspot.com',
+	messagingSenderId: '23844228465',
+	appId: '1:23844228465:web:d47372359f50686c237ad0',
+	measurementId: 'G-HRV974KXD2',
+}
 
-export default firebaseConfig;
-firebase.initializeApp(firebaseConfig);
+export default firebaseConfig
+firebase.initializeApp(firebaseConfig)
