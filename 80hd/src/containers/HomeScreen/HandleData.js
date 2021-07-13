@@ -62,11 +62,11 @@ export function formatLogData(date, mood, userRef, user) {
 function formatDate(date) {
 	console.log(date)
 	const formattedDate =
-      date.getFullYear().toString() +
-      '-' +
-      (date.getMonth()+1).toString() +
-      '-' +
-      date.getDate().toString()
+		date.getFullYear().toString() +
+		'-' +
+		(date.getMonth() + 1).toString() +
+		'-' +
+		date.getDate().toString()
 	console.log('formatDate function:' + formattedDate)
 	return formattedDate
 }

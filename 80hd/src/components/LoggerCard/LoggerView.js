@@ -7,7 +7,10 @@ function LoggerView({ selector, cardTitle, expandHeight, logsExpanded }) {
 	console.log('Logger View: ' + logsExpanded)
 	return (
 		<>
-			<ExpandableCard cardTitle={cardTitle} expanded={logsExpanded} expandHeight={expandHeight}>
+			<ExpandableCard
+				cardTitle={cardTitle}
+				expanded={logsExpanded}
+				expandHeight={expandHeight}>
 				{selector}
 			</ExpandableCard>
 		</>
@@ -18,7 +21,7 @@ LoggerView.propTypes = {
 	selector: PropTypes.element,
 	cardTitle: PropTypes.string,
 	expandHeight: PropTypes.number,
-	logsExpanded: PropTypes.bool
+	logsExpanded: PropTypes.bool,
 }
 
 export default LoggerView

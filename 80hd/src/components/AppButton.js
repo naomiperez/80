@@ -28,7 +28,7 @@ const AppButton = ({ onPress, title }) => (
 
 AppButton.propTypes = {
 	onPress: PropTypes.func,
-	title: PropTypes.string
+	title: PropTypes.string,
 }
 
 export default AppButton

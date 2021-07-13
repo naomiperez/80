@@ -4,7 +4,12 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 import { View } from 'react-native'
-import { VictoryLine, VictoryAxis, VictoryChart, VictoryTheme } from '../../Victory'
+import {
+	VictoryLine,
+	VictoryAxis,
+	VictoryChart,
+	VictoryTheme,
+} from '../../Victory'
 import styles from './styles'
 
 const data = [
@@ -18,30 +23,31 @@ const data = [
 ]
 
 function Insights() {
-
 	return (
 		<View style={styles.chartContainer}>
 			<Text style={styles.text}>July Mood Insights</Text>
-			<VictoryChart 
-				width={350} 
-				theme={VictoryTheme.material} 
-				style={styles.chart} 
-			>
-				<VictoryAxis crossAxis 
-					tickFormat={(t) => `July ${Math.round(t)}`} 
-					label="Days"
+			<VictoryChart
+				width={350}
+				theme={VictoryTheme.material}
+				style={styles.chart}>
+				<VictoryAxis
+					crossAxis
+					tickFormat={(t) => `July ${Math.round(t)}`}
+					label='Days'
 					style={{
-						axisLabel: {fontSize: 15, padding: 30}
+						axisLabel: { fontSize: 15, padding: 30 },
 					}}
 				/>
-				<VictoryAxis dependentAxis 
-					tickFormat={(t) => `${Math.round(t)}`} 
+				<VictoryAxis
+					dependentAxis
+					tickFormat={(t) => `${Math.round(t)}`}
 					domain={[0, 7]}
-					label="Mood"
+					label='Mood'
 					style={{
-						axisLabel: {fontSize: 15, padding: 30}
-					}} />
-				<VictoryLine data={data} x="x" y="y" />
+						axisLabel: { fontSize: 15, padding: 30 },
+					}}
+				/>
+				<VictoryLine data={data} x='x' y='y' />
 			</VictoryChart>
 		</View>
 	)

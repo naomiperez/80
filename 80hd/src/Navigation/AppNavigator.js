@@ -11,9 +11,8 @@ const Stack = createStackNavigator()
 
 // Use Stack Navigator to navigate to various pages in app
 function AppNavigator() {
-
 	const { currentUser, fetchCurrentUser } = useCurrentUser()
-  
+
 	React.useEffect(() => {
 		async function fetchUser() {
 			await fetchCurrentUser()
@@ -31,9 +30,12 @@ function AppNavigator() {
 						<Stack.Screen name='HomeNavigation' component={HomeNavigation} />
 					) : (
 						<>
-							<Stack.Screen name="OnboardingSwiper" component={OnboardingSwiper} />
-							<Stack.Screen name="Login" component={Login} />
-							<Stack.Screen name="Registration" component={Registration} />
+							<Stack.Screen
+								name='OnboardingSwiper'
+								component={OnboardingSwiper}
+							/>
+							<Stack.Screen name='Login' component={Login} />
+							<Stack.Screen name='Registration' component={Registration} />
 						</>
 					)}
 				</Stack.Navigator>

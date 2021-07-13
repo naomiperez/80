@@ -34,7 +34,7 @@ function SleepSelector(props) {
 
 SleepSelector.propTypes = {
 	hours: PropTypes.number,
-	logSleep: PropTypes.func
+	logSleep: PropTypes.func,
 }
 
 export default SleepSelector

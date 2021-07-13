@@ -25,10 +25,10 @@ function Calendar(props) {
 				scrollable={true}
 				startingDate={date}
 				selectedDate={date}
-				style={{ 
-					height: 150, 
-					paddingTop: 15, 
-					paddingBottom: 5 
+				style={{
+					height: 150,
+					paddingTop: 15,
+					paddingBottom: 5,
 				}}
 				daySelectionAnimation={{
 					type: 'background',
@@ -53,7 +53,7 @@ function Calendar(props) {
 
 Calendar.propTypes = {
 	date: PropTypes.instanceOf(Date),
-	logDate: PropTypes.func
+	logDate: PropTypes.func,
 }
 
 export default Calendar

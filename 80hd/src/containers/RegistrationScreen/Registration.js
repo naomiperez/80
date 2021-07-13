@@ -20,7 +20,7 @@ function Registration({ navigation }) {
 	// Add new user to database
 	const onRegisterPress = () => {
 		if (password !== confirmPassword) {
-			console.log('Passwords don\'t match.')
+			console.log("Passwords don't match.")
 			return
 		}
 
@@ -63,54 +63,59 @@ function Registration({ navigation }) {
 		<View style={styles.container}>
 			<KeyboardAwareScrollView
 				style={{ flex: 1, width: '100%' }}
-				keyboardShouldPersistTaps="always">
-				<Image style={styles.logo} source={require('../../assets/images/icon.png')} />
+				keyboardShouldPersistTaps='always'>
+				<Image
+					style={styles.logo}
+					source={require('../../assets/images/icon.png')}
+				/>
 				<TextInput
 					style={styles.input}
-					placeholder="Full Name"
-					placeholderTextColor="#aaaaaa"
+					placeholder='Full Name'
+					placeholderTextColor='#aaaaaa'
 					onChangeText={(text) => setFullName(text)}
 					value={fullName}
-					underlineColorAndroid="transparent"
-					autoCapitalize="none"
+					underlineColorAndroid='transparent'
+					autoCapitalize='none'
 				/>
 				<TextInput
 					style={styles.input}
-					placeholder="E-mail"
-					placeholderTextColor="#aaaaaa"
+					placeholder='E-mail'
+					placeholderTextColor='#aaaaaa'
 					onChangeText={(text) => setEmail(text)}
 					value={email}
-					underlineColorAndroid="transparent"
-					autoCapitalize="none"
+					underlineColorAndroid='transparent'
+					autoCapitalize='none'
 				/>
 				<TextInput
 					style={styles.input}
-					placeholderTextColor="#aaaaaa"
+					placeholderTextColor='#aaaaaa'
 					secureTextEntry
-					placeholder="Password"
+					placeholder='Password'
 					onChangeText={(text) => setPassword(text)}
 					value={password}
-					underlineColorAndroid="transparent"
-					autoCapitalize="none"
+					underlineColorAndroid='transparent'
+					autoCapitalize='none'
 				/>
 				<TextInput
 					style={styles.input}
-					placeholderTextColor="#aaaaaa"
+					placeholderTextColor='#aaaaaa'
 					secureTextEntry
-					placeholder="Confirm Password"
+					placeholder='Confirm Password'
 					onChangeText={(text) => setConfirmPassword(text)}
 					value={confirmPassword}
-					underlineColorAndroid="transparent"
-					autoCapitalize="none"
+					underlineColorAndroid='transparent'
+					autoCapitalize='none'
 				/>
-				<TouchableOpacity style={styles.button} onPress={() => onRegisterPress()}>
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => onRegisterPress()}>
 					<Text style={styles.buttonTitle}>Create account</Text>
 				</TouchableOpacity>
 				<View style={styles.footerView}>
 					<Text style={styles.footerText}>
-            Already got an account?{' '}
+						Already got an account?{' '}
 						<Text onPress={onFooterLinkPress} style={styles.footerLink}>
-              Log in
+							Log in
 						</Text>
 					</Text>
 				</View>
@@ -120,7 +125,7 @@ function Registration({ navigation }) {
 }
 
 Registration.propTypes = {
-	navigation: PropTypes.object
+	navigation: PropTypes.object,
 }
 
-export default Registration;
+export default Registration

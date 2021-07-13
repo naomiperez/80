@@ -46,7 +46,7 @@ export const CurrentUserProvider = ({ children }) => {
 }
 
 CurrentUserContext.propTypes = {
-	children: PropTypes.element
+	children: PropTypes.element,
 }
 
 export const useCurrentUser = () => React.useContext(CurrentUserContext)

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 		alignSelf: 'center',
 		position: 'absolute',
-		marginTop: 130
+		marginTop: 130,
 	},
 	name: {
 		fontSize: 22,
@@ -36,18 +36,18 @@ const styles = StyleSheet.create({
 	info: {
 		fontSize: 16,
 		color: Theme.text,
-		marginTop: 10
+		marginTop: 10,
 	},
 	description: {
 		fontSize: 16,
 		color: '#696969',
 		marginTop: 10,
-		textAlign: 'center'
+		textAlign: 'center',
 	},
 	buttonText: {
 		fontSize: 20,
 		color: '#696969',
-		fontWeight: '400'
+		fontWeight: '400',
 	},
 	buttonContainer: {
 		marginTop: 40,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 		width: 200,
 		borderRadius: 30,
 		backgroundColor: Theme.classyLight,
-	}
+	},
 })
 
 export default styles

@@ -26,7 +26,6 @@ function Home(props) {
 
 	React.useEffect(() => {
 		fetchCurrentUser()
-
 	}, [])
 
 	/********************/
@@ -76,19 +75,21 @@ function Home(props) {
 				<Calendar date={date} logDate={logDate} />
 				<LoggerView
 					selector={<MoodSelector mood={mood} date={date} logMood={logMood} />}
-					cardTitle="mood"
+					cardTitle='mood'
 					expandHeight={60}
 					loggerExpanded={logsExpanded}
 				/>
 				<LoggerView
 					selector={<SleepSelector hours={sleepHours} logSleep={logSleep} />}
-					cardTitle="sleep"
+					cardTitle='sleep'
 					expandHeight={80}
 					loggerExpanded={logsExpanded}
 				/>
-				<View style={styles.containerCard} >
-					<Text style={styles.text}>add factors                                             
-						<Text style={{fontWeight: '400', fontSize: 30}}>+</Text></Text>
+				<View style={styles.containerCard}>
+					<Text style={styles.text}>
+						add factors
+						<Text style={{ fontWeight: '400', fontSize: 30 }}>+</Text>
+					</Text>
 				</View>
 			</View>
 		</CurrentUserProvider>
@@ -96,7 +97,7 @@ function Home(props) {
 }
 
 Home.propTypes = {
-	user: PropTypes.object
+	user: PropTypes.object,
 }
 
 export default Home

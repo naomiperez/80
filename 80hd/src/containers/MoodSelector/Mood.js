@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
-import { mood1, mood2, mood3, mood4, mood5, mood6, mood7 } from '../../assets/images'
+import {
+	mood1,
+	mood2,
+	mood3,
+	mood4,
+	mood5,
+	mood6,
+	mood7,
+} from '../../assets/images'
 import styles from './styles'
 
 /* I may have to implement something where I retreive that day's Mood info to display when user clicks on it */
@@ -32,7 +40,10 @@ export function MoodSelectorFrag(props) {
 								<TouchableOpacity
 									mood={mood}
 									onPress={() => handleChange(index)}
-									style={[styles.button, pressed == index ? { backgroundColor: '#ccc7b8' } : {}]}>
+									style={[
+										styles.button,
+										pressed == index ? { backgroundColor: '#ccc7b8' } : {},
+									]}>
 									<Image source={img} style={styles.icon}></Image>
 								</TouchableOpacity>
 								<View style={styles.buttonSpace}></View>
@@ -45,7 +56,7 @@ export function MoodSelectorFrag(props) {
 	)
 }
 
-function moodPropsChanged(prevMood, nextMood){
+function moodPropsChanged(prevMood, nextMood) {
 	console.log('Prev date: ' + prevMood.date + ' Next date: ' + nextMood.date)
 	return prevMood.date == nextMood.date
 }
@@ -53,7 +64,7 @@ function moodPropsChanged(prevMood, nextMood){
 MoodSelectorFrag.propTypes = {
 	mood: PropTypes.number,
 	date: PropTypes.instanceOf(Date),
-	logMood: PropTypes.func
+	logMood: PropTypes.func,
 }
 
 const MoodSelector = React.memo(MoodSelectorFrag, moodPropsChanged)
