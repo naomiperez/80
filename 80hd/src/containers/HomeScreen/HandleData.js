@@ -37,7 +37,7 @@ export function formatLogData(date, mood, userRef, user) {
 	const formattedDate = formatDate(date)
 	/* Check if this component was returned by Registration/Login or App.js */
 	if (userRef) {
-		console.log('userRef: ' + userRef)
+		// console.log('userRef: ' + userRef)
 		// Create new data for day and add it as a document
 		let data = {
 			date: formattedDate,

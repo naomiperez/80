@@ -33,8 +33,9 @@ function Login({ navigation }) {
 							console.log('User does not exist anymore.')
 							return
 						}
-						const user = firestoreDocument.data()
-						navigation.navigate('Home')
+
+						// Return to AppNavigator and currentUser should now be defined
+						navigation.goBack()
 					})
 					.catch((error) => {
 						console.log(error)

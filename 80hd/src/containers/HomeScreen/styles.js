@@ -21,6 +21,17 @@ const styles = StyleSheet.create({
 		shadowRadius: 5,
 		shadowOpacity: 0.3,
 	},
+	header: {
+		position: 'absolute',
+		height: 60,
+		fontStyle: 'normal',
+		fontWeight: '900',
+		fontSize: 20,
+		lineHeight: 23,
+		flex: 1,
+		alignItems: 'center',
+		textAlign: 'center',
+	},
 	text: {
 		color: Theme.text,
 		marginBottom: 13,

@@ -4,13 +4,11 @@ import PropTypes from 'prop-types'
 
 /* Wrapper for cards and selectors */
 function LoggerView({ selector, cardTitle, expandHeight, logsExpanded }) {
-	console.log('Logger View: ' + logsExpanded)
+	// console.log('Logger View: ' + logsExpanded)
+
 	return (
 		<>
-			<ExpandableCard
-				cardTitle={cardTitle}
-				expanded={logsExpanded}
-				expandHeight={expandHeight}>
+			<ExpandableCard cardTitle={cardTitle} expandHeight={expandHeight}>
 				{selector}
 			</ExpandableCard>
 		</>

@@ -12,30 +12,24 @@
     "test": "jest"
   },
   "dependencies": {
+    "@expo-google-fonts/dm-mono": "^0.2.0",
     "@react-native-community/cli": "^4.14.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/slider": "^3.0.3",
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
-    "axios": "^0.21.1",
     "expo": "~41.0.1",
+    "expo-app-loading": "^1.1.2",
     "expo-font": "~9.1.0",
-    "expo-splash-screen": "~0.10.2",
-    "expo-status-bar": "~1.0.4",
-    "expo-updates": "~0.5.4",
     "firebase": "^8.2.3",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
     "react-native-calendar-strip": "^2.2.1",
-    "react-native-calendars": "^1.1261.0",
-    "react-native-eject": "^0.1.2",
-    "react-native-elements": "^3.4.1",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-keyboard-aware-scroll-view": "^0.9.4",
-    "react-native-reanimated": "~2.1.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.0.0",
     "react-native-svg": "12.1.0",
@@ -43,16 +37,16 @@
     "react-native-unimodules": "~0.13.3",
     "react-native-web": "~0.13.12",
     "react-navigation": "^4.4.4",
-    "react-redux": "^7.2.4",
+    "react-window": "^1.8.6",
     "recompose": "^0.30.0",
     "save": "^2.4.0",
     "victory": "^35.9.0",
-    "victory-native": "^35.3.3",
-    "wired-card": "^2.1.0"
+    "victory-native": "^35.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "babel-eslint": "^10.1.0",
+    "depcheck": "^1.4.2",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
@@ -64,7 +58,8 @@
     "husky": "^7.0.0",
     "jest-expo": "^42.0.1",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "react-test-renderer": "^16.13.1"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [

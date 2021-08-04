@@ -19,7 +19,7 @@ const HomeNavigation = () => {
 					left: 20,
 					right: 20,
 					elevation: 0,
-					backgroundColor: '#fff',
+					backgroundColor: '#D7CABD',
 					borderRadius: 15,
 					height: 60,
 				},

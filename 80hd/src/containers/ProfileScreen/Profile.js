@@ -23,23 +23,22 @@ function Profile({ navigation }) {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.header}></View>
-			<Image
-				style={styles.avatar}
-				source={{
-					uri: 'https://bootdey.com/img/Content/avatar/avatar6.png',
-				}}
-			/>
+			<View style={styles.header}>
+				<Image
+					style={styles.avatar}
+					source={{
+						uri: 'https://bootdey.com/img/Content/avatar/avatar6.png',
+					}}
+				/>
+			</View>
 			<View style={styles.body}>
-				<View style={styles.bodyContent}>
-					<Text style={styles.name}>John Doe</Text>
+				{/* <Text style={styles.name}>{currentUser.fullName}</Text> */}
 
-					<TouchableOpacity
-						style={styles.buttonContainer}
-						onPress={() => logout()}>
-						<Text style={styles.buttonText}>logout</Text>
-					</TouchableOpacity>
-				</View>
+				<TouchableOpacity
+					style={styles.buttonContainer}
+					onPress={() => logout()}>
+					<Text style={styles.buttonText}>logout</Text>
+				</TouchableOpacity>
 			</View>
 		</View>
 	)

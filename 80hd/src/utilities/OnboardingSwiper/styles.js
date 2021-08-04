@@ -21,7 +21,6 @@ export default StyleSheet.create({
 		backgroundColor: '#684A35',
 	},
 	title: {
-		fontFamily: 'DMMono-Med',
 		color: '#FFE9D0',
 		fontSize: 30,
 		fontWeight: 'bold',

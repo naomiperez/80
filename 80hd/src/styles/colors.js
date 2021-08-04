@@ -4,14 +4,16 @@ const Theme = {
 	primaryLight: '#9D7B64',
 	cream: '#f1ede2',
 	creamHalf: '#F1E7CC20',
-	text: '#FFE9D0',
+	text: '#FFE9D1',
 	accent: '#00C9AB',
 	button: '#33AC9B', // similar to accent
 	classyLight: '#BBA89C',
 	classyDarkerLight: '#857468',
-	card: '#d8d0bd',
+	card: '#C3976E',
 	calendar: '#3d2316',
-	cardLight: '#569187',
+	navBar: '#D7CABD',
+	date: '#976C50',
+	white: '#e7e2d9',
 }
 
 export default Theme

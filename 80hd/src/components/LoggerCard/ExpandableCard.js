@@ -2,7 +2,10 @@ import React from 'react'
 import { Text, View, Image, TouchableHighlight, Animated } from 'react-native'
 import dropdown from '../../assets/images/dropdown.png'
 import styles from './styles'
+// Font
+import StyledText from '../StyledText'
 
+/* TODO: figure out how to modify "expanded" props */
 class ExpandableCard extends React.Component {
 	anime = {
 		height: new Animated.Value(60),
@@ -16,9 +19,9 @@ class ExpandableCard extends React.Component {
 		this.initContentHeight = this.initContentHeight.bind(this)
 		this.toggle = this.toggle.bind(this)
 
-		this.anime.expanded = props.expanded
+		this.anime.expanded = false
 		this.state = {
-			expanded: props.expanded,
+			expanded: false,
 		}
 
 		this.anime.height = new Animated.Value(props.expandHeight)
@@ -70,11 +73,11 @@ class ExpandableCard extends React.Component {
 	render() {
 		const { expanded } = this.state
 		const { children, cardTitle } = this.props
-		console.log(expanded)
+		// console.log(expanded)
 		return (
 			<View style={styles.container}>
 				<View style={styles.inlineStyle}>
-					<Text style={styles.text}>{cardTitle}</Text>
+					<StyledText text={cardTitle} style={styles.text}></StyledText>
 					<TouchableHighlight underlayColor='transparent' onPress={this.toggle}>
 						<Image style={styles.img} source={dropdown} />
 					</TouchableHighlight>

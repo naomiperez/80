@@ -46,8 +46,8 @@ function Registration({ navigation }) {
 					.doc(uid)
 					.set(data)
 					.then(() => {
-						// If registration was successful, we navigate to the Home Screen, by passing in the user object data as well
-						navigation.navigate('Home', { user: data })
+						// If registration was successful, we navigate to the Home Screen, by returning to AppNavigator, and currentUser should now be defined
+						navigation.goBack()
 					})
 					.catch((error) => {
 						// If error occurs, show an alert with it

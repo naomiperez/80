@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useContext, createContext } from 'react'
 import PropTypes from 'prop-types'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
@@ -6,47 +6,33 @@ import 'firebase/auth'
 
 /* Handles Fetching of user for persistent Login */
 
-export const CurrentUserContext = React.createContext()
+const CurrentUserContext = createContext()
 
-export const CurrentUserProvider = ({ children }) => {
-	const [currentUser, setCurrentUser] = React.useState(null)
+const CurrentUserProvider = ({ children }) => {
+	const [currentUser, setCurrentUser] = useState(undefined)
+	const value = { currentUser }
 
-	const fetchCurrentUser = () => {
-		const db = firebase.firestore()
-		const usersRef = db.collection('users')
+	useEffect(() => {
+		const unsubscribe = firebase.auth().onAuthStateChanged(setCurrentUser)
 
-		// returns the currently logged in user
-		firebase.auth().onAuthStateChanged((user) => {
-			if (user) {
-				// fetch all the extra user data that we stored in Firestore
-				// and set it on the current component’s state
-				usersRef
-					.doc(user.uid)
-					.get()
-					.then((document) => {
-						const userData = document.data()
-						setCurrentUser(userData)
-						console.log('CurrentUserContext: ' + userData.fullName)
-					})
-					.catch((error) => {
-						console.log('Error: ' + error)
-					})
-			} else {
-				console.log('User is null')
-				setCurrentUser(null)
-			}
-		})
-	}
+		return unsubscribe
+	}, [])
 
 	return (
-		<CurrentUserContext.Provider value={{ currentUser, fetchCurrentUser }}>
+		<CurrentUserContext.Provider value={value}>
 			{children}
 		</CurrentUserContext.Provider>
 	)
 }
 
-CurrentUserContext.propTypes = {
-	children: PropTypes.element,
+function useFirebaseAuth() {
+	const context = useContext(CurrentUserContext)
+	if (context === undefined) {
+		throw new Error(
+			'useFirebaseAuth must be used within a FirebaseAuthProvider'
+		)
+	}
+	return context.currentUser
 }
 
-export const useCurrentUser = () => React.useContext(CurrentUserContext)
+export { CurrentUserProvider, useFirebaseAuth }

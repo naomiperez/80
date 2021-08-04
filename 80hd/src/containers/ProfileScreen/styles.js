@@ -3,11 +3,13 @@ import Theme from '../../styles/colors'
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: Theme.cream,
+		flexDirection: 'column',
+		flex: 1,
 	},
 	header: {
+		flex: 1,
 		backgroundColor: Theme.primaryLight,
-		height: 200,
+		height: 70,
 	},
 	avatar: {
 		width: 130,
@@ -15,33 +17,32 @@ const styles = StyleSheet.create({
 		borderRadius: 63,
 		borderWidth: 4,
 		borderColor: 'white',
-		marginBottom: 10,
+		// marginBottom: 10,
 		alignSelf: 'center',
 		position: 'absolute',
 		marginTop: 130,
 	},
 	name: {
 		fontSize: 22,
-		color: Theme.text,
+		color: Theme.primary,
 		fontWeight: '600',
 	},
 	body: {
-		marginTop: 20,
-	},
-	bodyContent: {
-		flex: 1,
+		flex: 2,
+		color: Theme.cream,
 		alignItems: 'center',
 		padding: 30,
+		flexDirection: 'column',
 	},
 	info: {
 		fontSize: 16,
 		color: Theme.text,
-		marginTop: 10,
+		// marginTop: 10,
 	},
 	description: {
 		fontSize: 16,
 		color: '#696969',
-		marginTop: 10,
+		// marginTop: 10,
 		textAlign: 'center',
 	},
 	buttonText: {
@@ -51,12 +52,12 @@ const styles = StyleSheet.create({
 	},
 	buttonContainer: {
 		marginTop: 40,
-		height: 45,
+		height: 50,
+		width: 130,
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginBottom: 20,
-		width: 200,
 		borderRadius: 30,
 		backgroundColor: Theme.classyLight,
 	},
