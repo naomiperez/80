@@ -27,7 +27,7 @@ function Calendar(props) {
 	// Use onDateSelected callback to notify Home Component of selected Date
 	function handleChange(date) {
 		const dateObj = new Date(date)
-
+		console.log(date)
 		setDate(dateObj)
 		// Calling 'Home' logDate function
 		props.logDate({ date: dateObj })
@@ -39,10 +39,9 @@ function Calendar(props) {
 		return (
 			<View>
 				<CalendarStrip
-					scrollToOnSetSelectedDate={true}
-					scrollerPaging={true}
 					scrollable={true}
-					startingDate={date}
+					scrollerPaging={true}
+					startingDate={initialDate}
 					selectedDate={date}
 					style={styles.all}
 					innerStyle={{
@@ -52,7 +51,7 @@ function Calendar(props) {
 						type: 'background',
 						duration: 150,
 						highlightColor: Theme.cream,
-						calendarColor: Theme.cream,
+						// calendarColor: Theme.cream,
 					}}
 					calendarColor={Theme.primary}
 					calendarHeaderContainerStyle={styles.headerContainer}
@@ -63,14 +62,21 @@ function Calendar(props) {
 						fontFamily: 'DMMono_500Medium',
 						color: Theme.date,
 					}}
-					highlightDateContainerStyle={styles.hlDateContainer}
+					// highlightDateNumberContainerStyle={{ 
+					// 	backgroundColor: Theme.text,
+					// }}
 					highlightDateNameStyle={{
-						color: Theme.text,
-						fontSize: 11,
+						color: Theme.greyedOut,
+						fontSize: 12,
 						fontStyle: 'normal',
 						fontFamily: 'DMMono_500Medium',
 					}}
-					highlightDateNumberStyle={{ color: '#976C50' }}
+					highlightDateNumberStyle={{
+						color: Theme.greyedOut,
+						fontSize: 23,
+						fontStyle: 'normal',
+						fontFamily: 'DMMono_500Medium',
+					}}
 					dayContainerStyle={styles.dayContainer}
 					dateNumberStyle={{
 						color: Theme.text,
@@ -85,6 +91,10 @@ function Calendar(props) {
 						fontStyle: 'normal',
 						fontFamily: 'DMMono_500Medium',
 					}}
+					// highlightDateContainerStyle={{
+					// 	backgroundColor: Theme.text
+					// }}
+					updateWeek={true}
 					iconContainer={{ padding: 4 }}
 					leftSelector={[]}
 					rightSelector={[]}

@@ -53,8 +53,9 @@ function Login({ navigation }) {
 				style={styles.scroll}
 				keyboardShouldPersistTaps='always'>
 				<Image
-					style={styles.logo}
 					source={require('../../assets/images/icon.png')}
+					style={styles.logo}
+				
 				/>
 				<TextInput
 					style={styles.input}

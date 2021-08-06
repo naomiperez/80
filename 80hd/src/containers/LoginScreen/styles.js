@@ -1,17 +1,19 @@
 import { StyleSheet } from 'react-native'
+import Theme from '../../styles/colors'
 
 export default StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
+		backgroundColor: Theme.primary
 	},
 	title: {},
 	logo: {
 		flex: 1,
-		height: 120,
-		width: 90,
+		height: 60,
 		alignSelf: 'center',
-		margin: 30,
+		marginTop: 100,
+		marginBottom: 30
 	},
 	scroll: {
 		flex: 1,
@@ -29,7 +31,7 @@ export default StyleSheet.create({
 		paddingLeft: 16,
 	},
 	button: {
-		backgroundColor: '#788eec',
+		backgroundColor: Theme.primaryLight,
 		marginLeft: 30,
 		marginRight: 30,
 		marginTop: 20,
@@ -50,10 +52,10 @@ export default StyleSheet.create({
 	},
 	footerText: {
 		fontSize: 16,
-		color: '#2e2e2d',
+		color: Theme.primaryLight,
 	},
 	footerLink: {
-		color: '#788eec',
+		color: Theme.white,
 		fontWeight: 'bold',
 		fontSize: 16,
 	},

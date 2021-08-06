@@ -6,10 +6,10 @@ import Theme from '../styles/colors'
 const styles = StyleSheet.create({
 	appButtonContainer: {
 		elevation: 8,
-		backgroundColor: Theme.button,
-		borderRadius: 10,
-		paddingVertical: 10,
-		paddingHorizontal: 12,
+		backgroundColor: Theme.primaryLight,
+		borderRadius: 8,
+		paddingVertical: 12,
+		paddingHorizontal: 14,
 	},
 	appButtonText: {
 		fontSize: 18,

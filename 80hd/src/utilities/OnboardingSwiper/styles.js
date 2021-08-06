@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import Theme from '../../styles/colors'
 
 export default StyleSheet.create({
 	wrapper: {},
@@ -6,35 +7,34 @@ export default StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#684A35',
+		backgroundColor: Theme.primary,
 	},
 	slide2: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#684A35',
+		backgroundColor: Theme.primary,	
 	},
 	slide3: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#684A35',
+		backgroundColor: Theme.primary,
 	},
 	title: {
-		color: '#FFE9D0',
+		color: Theme.text,
 		fontSize: 30,
 		fontWeight: 'bold',
 		paddingBottom: 5,
 	},
 	text: {
-		color: '#FFE9D0',
+		color: Theme.text,
 		fontSize: 20,
 		paddingLeft: 60,
 		paddingRight: 60,
 	},
-	button: {
-		padding: 20,
-		color: '#FFE9D0',
+	buttonContainer: {
+		marginTop: 25
 	},
 	bold: {
 		fontWeight: 'bold',

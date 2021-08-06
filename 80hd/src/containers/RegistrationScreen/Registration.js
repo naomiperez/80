@@ -38,7 +38,7 @@ function Registration({ navigation }) {
 					id: uid,
 					email: email,
 					fullName: fullName,
-				}
+				} 
 
 				const db = firebase.firestore()
 				const usersRef = db.collection('users')

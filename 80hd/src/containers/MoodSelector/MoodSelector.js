@@ -1,25 +1,15 @@
 import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { FixedSizeList as List } from 'react-window'
+import { View, Image } from 'react-native'
+import VerticalSlider from 'rn-vertical-slider'
+import pot from '../../assets/images/pot.png'
 import PropTypes from 'prop-types'
-import {
-	mood1,
-	mood2,
-	mood3,
-	mood4,
-	mood5,
-	mood6,
-	mood7,
-} from '../../assets/images'
+import Theme from '../../styles/colors'
 import styles from './styles'
 
 /* I may have to implement something where I retreive that day's Mood info to display when user clicks on it */
 
-// Mood Card displayed on Home page where user can log daily mood
-const images = new Array(mood1, mood2, mood3, mood4, mood5, mood6, mood7)
-
-function MoodSelector(props) {
-	const [pressed, setPressed] = useState(props.mood)
+const MoodSelector = React.memo((props) => {
+	const [newRender, setNewRender] = useState(true)
 	let { mood, date } = props
 
 	{
@@ -27,41 +17,72 @@ function MoodSelector(props) {
 	}
 
 	function handleChange(index) {
+		console.log(index)
 		props.logMood(index)
-		setPressed(index)
 	}
+
+	if(newRender) {
+		return (
+			<>
+			<View style={styles.container}>
+
+				<VerticalSlider
+					min={0}
+					max={10}
+					value={props.mood}
+					width={70}
+					height={180}
+					step={1}
+					onChange={(value) => {
+						setNewRender(false)
+					}}
+					borderRadius={6}
+					minimumTrackTintColor={Theme.primary}
+					maximumTrackTintColor={Theme.white}
+					ballIndicatorWidth={10}
+					ballIndicatorHeight={10}
+					showBallIndicator
+					ballIndicatorPosition={-30}
+					style={styles.slider}
+					renderIndicator={(value) => <Image source={pot}></Image>}
+				/>
+			</View>
+		</>
+		)
+	} else {
 
 	return (
 		<>
-			<View>
-				<Text>
-					{images.map((img, index) => {
-						return (
-							<React.Fragment key={index}>
-								<TouchableOpacity
-									mood={mood}
-									onPress={() => handleChange(index)}
-									style={[
-										styles.button,
-										pressed === index ? { backgroundColor: '#ccc7b8' } : {},
-									]}>
-									<Image source={img} style={styles.icon}></Image>
-								</TouchableOpacity>
-								<View style={styles.buttonSpace}></View>
-							</React.Fragment>
-						)
-					})}
-				</Text>
+			<View style={styles.container}>
+
+				<VerticalSlider
+					min={0}
+					max={10}
+					onChange={(value) => {
+						// console.log('CHANGE', value)
+					}}
+					onComplete={(value) => {
+						console.log('COMPLETE', value)
+						handleChange(value)
+					}}
+					width={70}
+					height={180}
+					step={1}
+					borderRadius={6}
+					minimumTrackTintColor={Theme.primary}
+					maximumTrackTintColor={Theme.white}
+					ballIndicatorWidth={10}
+					ballIndicatorHeight={10}
+					showBallIndicator
+					ballIndicatorPosition={-30}
+					style={styles.slider}
+					renderIndicator={(value) => <Image source={pot}></Image>}
+				/>
 			</View>
 		</>
 	)
-}
-
-function moodPropsChanged(prevMood, nextMood) {
-	// console.log('Prev date: ' + prevMood.date + ' Next date: ' + nextMood.date)
-	console.log('mood props changed' + (prevMood.date === nextMood.date))
-	return prevMood.date === nextMood.date
-}
+				}
+})
 
 // MoodSelectorFrag.propTypes = {
 // 	mood: PropTypes.number,

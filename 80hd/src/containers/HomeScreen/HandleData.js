@@ -35,19 +35,19 @@ export function formatLogData(date, mood, userRef, user) {
 	/* Format date to pass to document.add() */
 	let day = date.getDay()
 	const formattedDate = formatDate(date)
+
 	/* Check if this component was returned by Registration/Login or App.js */
 	if (userRef) {
-		// console.log('userRef: ' + userRef)
+		
 		// Create new data for day and add it as a document
 		let data = {
 			date: formattedDate,
 			mood: mood,
 			weekday: day,
-			user: userRef,
+			user: user,
 		}
 		return data
 	} else {
-		console.log('user: ' + user)
 		let data = {
 			date: formattedDate,
 			mood: mood,
@@ -60,13 +60,16 @@ export function formatLogData(date, mood, userRef, user) {
 
 /* Adding 1 to the month as a fix for something... I'm not sure what */
 function formatDate(date) {
-	console.log(date)
 	const formattedDate =
 		date.getFullYear().toString() +
 		'-' +
 		(date.getMonth() + 1).toString() +
 		'-' +
 		date.getDate().toString()
-	console.log('formatDate function:' + formattedDate)
-	return formattedDate
+
+		return formattedDate
+}
+
+function logSelection() {
+
 }

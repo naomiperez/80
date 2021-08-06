@@ -20,4 +20,11 @@ export default StyleSheet.create({
 		width: 25,
 		height: 25,
 	},
+	container: {
+		flexDirection: 'row',
+		justifyContent: 'center'
+	},
+	slider: {
+		flex: 1
+	}
 })

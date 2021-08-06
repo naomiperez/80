@@ -3,7 +3,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
-export async function getUserData(currentUser) {
+export default async function getUserData(currentUser) {
 	const db = firebase.firestore()
 	const usersRef = db.collection('users')
 
@@ -16,9 +16,9 @@ export async function getUserData(currentUser) {
 			var data
 			querySnapshot.forEach((doc) => {
 				data = doc.data()
-				console.log(data)
+				// console.log(data)
 			})
-			console.log(data)
+			console.log(`getUserData: ${JSON.stringify(data)}`)
 			return data
 		})
 		.catch((error) => {
